@@ -1,0 +1,99 @@
+.titleContainer{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-color: white;
+}   
+
+
+.title{
+    font-size: 62px;
+    line-height: 0.8em;
+    margin-bottom: 0px;
+    color: var(--charcoal);
+    position: relative;
+}
+
+.title::before{
+    content: "";
+    display: block;
+    width: 120%;
+    height: 5px;
+    left: 50%;
+    background-color: var(--primarySalmon);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: -1;
+}
+
+.knowMore{
+    margin: 0;
+    padding: 4px 10px;
+    margin-top: 10px;
+    background-color: var(--primarySalmon);
+    display: inline-block;
+    font-size: 18px;
+}
+
+
+/* Menu */
+.menuContainer{
+    display: flex;
+    height: 120vh;
+}
+
+.menuSection{
+    position: relative;
+    z-index: -1;
+    flex: 1;
+    border-right: 1px solid #CECECE;
+}
+
+.menuSectionTitle{
+    font-size: 62px;
+    color:var(--charcoal);
+    text-transform: uppercase;
+}
+
+.menuItem{
+    padding: 0px 38px;
+    margin-bottom: 50px;
+}
+
+.mealName{
+    font-size: 19px;
+    color: var(--charcoal);
+    text-transform: uppercase;
+}
+
+.mealDescription{
+    color: #767676;
+    font-size: 15px;
+}
+
+.mealPrice{
+    border: 2px solid var(--primarySalmon);
+    font-size: 14px;
+    padding: 4px 8px;
+}
+
+.menu{
+    height: 120vh;
+    overflow: hidden;
+}
+
+
+@media (max-width: 810px) {
+ 
+    .menuSectionTitle{
+        font-size: 25px;
+        padding: 0px 10px;
+    }
+
+    .menuItem{
+        padding: 0px 8px;
+        margin-bottom: 20px;
+    }
+    
+}

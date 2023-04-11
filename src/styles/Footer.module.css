@@ -1,0 +1,60 @@
+.backgroundSalmon{
+    background-color: var(--primarySalmon);
+    z-index: -1;
+    position: relative;
+
+}
+
+.topFooter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top:70px;
+    align-items: center;
+}
+
+.title{
+    font-size: 35px;
+    margin: 0;
+    color: var(--charcoal);
+    line-height: 0.1em;
+}
+
+.withUs{
+    margin-top: 0;
+    font-size: 62px;
+    position: relative;
+}
+
+.withUs::before{
+    display: block;
+    content:"";
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 120%;
+    height: 5px;
+    transform: translateX(-50%);
+    background-color: white;
+    z-index: -1;
+}
+
+.collab{
+    width: 330px;
+}
+
+.form{
+    display:flex;
+}
+
+.collabText{
+    font-size: 15px;
+    color: #767676;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+

@@ -1,0 +1,73 @@
+.titleContainer{
+    /* width: 50%; 
+    display: flex;
+    justify-content: flex-end; */
+}   
+
+
+.title{
+    color: var(--charcoal);
+}
+
+.title h1{
+    font-size: 62px;
+    line-height: 0.8em;
+    margin-bottom: 0px;
+}
+
+.title .knowMore{
+    margin: 0;
+    padding: 4px 10px;
+    margin-top: 10px;
+    background-color: var(--primarySalmon);
+    display: inline-block;
+    font-size: 18px;
+}
+
+.community{
+    position: relative;
+}
+
+.community::before{
+    content: "";
+    display: block;
+    width: 120%;
+    right: 50%;
+    height: 5px;
+    background-color: var(--primarySalmon);
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    z-index: -1;
+}
+
+.titleDescription{
+    font-size: 22px;
+    width: 200px;
+}
+
+.reviewsContainer{
+    background-color: white;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.reviewCard:nth-child(odd){
+    align-self: end;
+}
+
+
+@media (max-width: 810px) {
+  .reviewsContainer{
+    display: block;
+  }
+
+  .titleContainer{
+    display: block;
+  }
+
+}
