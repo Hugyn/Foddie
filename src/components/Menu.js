@@ -57,11 +57,15 @@ const menu = {
 }
 
 function Menu(props) {
-
     const [paralax, setParallax] = useState("")
+    const size = useWindowSize()
     useEffect(() => {
-       setParallax([[90, -60], [-60, 90], [90, -60],[-60, 60]]);
-    }, [])
+        if(size.width < 810){
+            setParallax([[90, -60], [-10, 30], [200, -360],[40, -60]]);
+        }else {
+            setParallax([[90, -60], [-60, 90], [90, -60],[-60, 60]]);
+        }
+    }, [size])
 
     
     return (
@@ -76,7 +80,7 @@ function Menu(props) {
                          {Object.keys(menu).map((item, _i)=> {
                              return(
                                 <div key={_i} id={item} className={styles.menuSection}>
-                                     <Parallax translateY={paralax[_i]}>
+                                     <Parallax className={styles.background} translateY={paralax[_i]}>
                                             <h1 className={styles.menuSectionTitle}>{item.replace("_", " ")}</h1>
                                             {Object.keys(menu[item]).map((meal, _i)=> {
                                                 return(
@@ -98,4 +102,28 @@ function Menu(props) {
     )
 }
 
+function useWindowSize() {
+
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      
+
+      window.addEventListener("resize", handleResize);
+       
+      handleResize();
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); 
+    return windowSize;
+  }
 export default Menu;

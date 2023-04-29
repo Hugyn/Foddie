@@ -1,15 +1,18 @@
-.backgroundSalmon{
-    background-color: var(--primarySalmon);
-    z-index: -1;
-    position: relative;
 
+
+.footerContent {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    align-items: center;
+    background-color: var(--primarySalmon);
+    border-top: 4px solid #000000ab;
 }
 
 .topFooter{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top:70px;
-    align-items: center;
+    display: flex;
+    padding: 70px 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .title{
@@ -23,6 +26,8 @@
     margin-top: 0;
     font-size: 62px;
     position: relative;
+    z-index: 2;
+
 }
 
 .withUs::before{
@@ -40,6 +45,7 @@
 
 .collab{
     width: 330px;
+    margin-bottom: 30px;
 }
 
 .form{

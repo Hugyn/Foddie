@@ -106,3 +106,23 @@
     bottom: 0;
     z-index: -1;
 }
+
+@media (max-width: 810px) {
+    .cardBody{
+        width: 250px;
+        height: auto;
+        padding: 0px 10px;
+    }
+    .likesContainer{
+        /* position: relative; */
+        /* margin-top: 10px; */
+        bottom: 0px;
+    }
+    .cardImageContainer{
+        height: auto;
+        min-height: 250px;
+    }
+    .reviewCardContainer{
+        padding: 10px 6px;
+    }
+}
