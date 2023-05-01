@@ -1,0 +1,52 @@
+.locationSection{
+    margin: 100px 0px;
+}
+
+
+.title{
+    font-size: 62px;
+    line-height: 0.8em;
+    margin-bottom: 0px;
+    color: var(--charcoal);
+    position: relative;
+}
+
+.title::before{
+    content: "";
+    display: block;
+    width: 120%;
+    height: 5px;
+    left: 50%;
+    background-color: var(--primarySalmon);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: -1;
+}
+
+.locationTitleSection{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 40px;
+    z-index: 99;
+    position: relative;
+}
+
+.knowMore{
+    margin: 0;
+  margin-top: 0px;
+padding: 4px 10px;
+margin-top: 10px;
+background-color: var(--primarySalmon);
+display: inline-block;
+font-size: 18px;
+}
+
+.mapSection{
+    border: 3px solid var(--charcoal);
+    padding: 30px;
+}
+@media (max-width: 810px) {
+ 
+}

@@ -79,6 +79,9 @@ input::placeholder{
   
 }
 
+.mapboxgl-canvas{
+  border-radius: 30px;
+}
 
 @media (max-width: 810px) {
   .container{

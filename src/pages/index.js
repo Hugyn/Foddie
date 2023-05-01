@@ -11,6 +11,7 @@ import Community from '@/components/Community'
 import Menu from '@/components/Menu';
 import Footer from '@/components/Footer';
 import Observer from '@/components/Observer';
+import Location from '@/components/Location';
 
 
 
@@ -23,6 +24,7 @@ export default function Home(props) {
         <meta name="description" content="Foodie - The best food experience" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" /> 
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet"></link>
       </Head>
       <Navbar/>
       <main className={styles.main}>
@@ -30,6 +32,7 @@ export default function Home(props) {
           <Landing key="landing" target={target}/>
           <Community reviewsData={props.reviews} key="community" target={target}/>
           <Menu key="menu"/>
+          <Location key="location" target={target} mapBoxToken={props.mapBoxToken}/>
           <Footer key="footer"/>
         </Observer>
       </main>
@@ -40,13 +43,14 @@ export default function Home(props) {
 export async function getServerSideProps({req}){
   
   const { origin } = absoluteUrl(req, "localhost:3000")
-  const apiURL = `${origin}/api/reviews`
+  const apiURL = `http://192.168.0.12:3000/api/reviews`
   const response = await fetch(apiURL);
   const reviewsData = await response.json();
   
   return {
     props: {
       reviews:reviewsData.default,
+      mapBoxToken:process.env.MAPBOX_TOKEN
     }
   }
 } 
