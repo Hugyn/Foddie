@@ -30,7 +30,7 @@ export default function Home(props) {
       <main className={styles.main}>
         <Observer onChange={(inView, entry)=> inView ?  setTarget(entry.target.id): null}>
           <Landing key="landing" target={target}/>
-//           <Community reviewsData={props.reviews} key="community" target={target}/>
+          <Community reviewsData={props.reviews} key="community" target={target}/>
           <Menu key="menu"/>
           <Location key="location" target={target} mapBoxToken={props.mapBoxToken}/>
           <Footer key="footer"/>
